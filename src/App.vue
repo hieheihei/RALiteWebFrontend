@@ -1,38 +1,41 @@
 <template>
-  <div id="app">
-      <div class="container">
-          <div class="row">
-            <home-top></home-top>
-          </div>
-           <div class="row">
-            <div class="col-md-4">
-              <home-left></home-left>
-            </div>
-            <div class="col-md-8">
-              <editor></editor>
-            </div>
-          </div>
-           <div class="row">
-              <home-footer></home-footer>
-          </div>
-      </div>
-    <router-view/>
-  </div>
+	<div id="app">
+		<div class="container">
+			<div class="row">
+				<home-top></home-top>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<home-left></home-left>
+				</div>
+				<div class="col-md-8">
+					<editor></editor>
+					<RATable></RATable>
+				</div>
+			</div>
+			<div class="row">
+				<home-footer></home-footer>
+			</div>
+		</div>
+		<router-view />
+	</div>
 </template>
 
 <script>
-import HomeFooter from './components/common/HomeFooter.vue'
-import HomeLeft from './components/common/HomeLeft.vue'
-import HomeTop from './components/common/HomeTop.vue'
-import Editor from './components/Editor.vue'
+	import HomeFooter from './components/common/HomeFooter.vue'
+	import HomeLeft from './components/common/HomeLeft.vue'
+	import HomeTop from './components/common/HomeTop.vue'
+	import Editor from './components/Editor.vue'
+	import RATable from './components/RATable.vue'
 
-export default {
-  name:"RALiteWeb",
-  components:{
-    HomeTop,
-    HomeFooter,
-    HomeLeft,
-    Editor
-  }
-}
+	export default {
+		name: "RALiteWeb",
+		components: {
+			HomeTop,
+			HomeFooter,
+			HomeLeft,
+			Editor,
+			RATable
+		}
+	}
 </script>
