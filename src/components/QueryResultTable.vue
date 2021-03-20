@@ -5,8 +5,8 @@
 				<th v-for = 'colName in tableData.colNames' v-bind:key = 'colName'>{{colName}}</th>
 			</thead>
 			<tbody>
-				<tr v-for = 'line in tableData.data'  v-bind:key = 'line'>
-				    <td v-for = 'cell in line'  v-bind:key = 'cell'>
+				<tr v-for = '(line,index) in tableData.data'  v-bind:key = 'index'>
+				    <td v-for = '(cell,cnum) in line'  v-bind:key = 'cell+cnum'>
 						{{cell}}
 					</td>
 				</tr>
@@ -19,7 +19,7 @@
 	import { mapState } from 'vuex'
 
 	export default{
-		name:'RATable',
+		name:'QueryResultTable',
 		data(){
 			return{
 

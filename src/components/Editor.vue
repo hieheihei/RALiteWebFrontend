@@ -14,7 +14,7 @@
 		template: 'text'
 	});
 	FroalaEditor.RegisterCommand('projection', {
-		title: 'π',
+		title: 'projection',
 		focus: false,
 		undo: false,
 		refreshAfterCallback: false,
@@ -120,6 +120,34 @@
 			this.html.insert('⨝');
 		}
 	});
+	
+	FroalaEditor.DefineIcon('group by', {
+		NAME: 'γ',
+		template: 'text'
+	});
+	FroalaEditor.RegisterCommand('group by', {
+		title: 'group by',
+		focus: false,
+		undo: false,
+		refreshAfterCallback: false,
+		callback: function() {
+			this.html.insert('γ');
+		}
+	});
+	
+	FroalaEditor.DefineIcon('as', {
+		NAME: '→',
+		template: 'text'
+	});
+	FroalaEditor.RegisterCommand('as', {
+		title: 'as',
+		focus: false,
+		undo: false,
+		refreshAfterCallback: false,
+		callback: function() {
+			this.html.insert('→');
+		}
+	});
 
 	export default {
 		name: 'Editor',
@@ -136,7 +164,7 @@
 					attribution: false,
 					placeholderText: 'Edit RA Statement Here!',
 					toolbarButtons: [
-						['projection', 'selection', 'intersect', 'union', 'subtraction', 'cross join', 'natural join']
+						['projection', 'selection', 'intersect', 'union', 'subtraction', 'cross join', 'natural join','group by','as']
 					]
 				},
 				userInput: ''
@@ -145,7 +173,7 @@
 		methods: {
 			executeStatment() {
 				console.log(this.userInput);
-				axios.post('http://localhost:1316/raQuery', {
+				axios.put('http://localhost:1316/raQuery', {
 				  query:this.userInput
 				  })
 				  .then((response) => {

@@ -5,12 +5,14 @@
 				<home-top></home-top>
 			</div>
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<home-left></home-left>
 				</div>
-				<div class="col-md-8">
-					<editor></editor>
-					<RATable></RATable>
+				<div class="col-md-6">
+					<home-main></home-main>
+				</div>
+				<div class="col-md-3">
+					<home-right></home-right>
 				</div>
 			</div>
 			<div class="row">
@@ -25,8 +27,8 @@
 	import HomeFooter from './components/common/HomeFooter.vue'
 	import HomeLeft from './components/common/HomeLeft.vue'
 	import HomeTop from './components/common/HomeTop.vue'
-	import Editor from './components/Editor.vue'
-	import RATable from './components/RATable.vue'
+	import HomeMain from './components/common/HomeMain.vue'
+	import HomeRight from './components/common/HomeRight.vue'
 
 	export default {
 		name: "RALiteWeb",
@@ -34,8 +36,8 @@
 			HomeTop,
 			HomeFooter,
 			HomeLeft,
-			Editor,
-			RATable
+			HomeMain,
+			HomeRight
 		}
 	}
 </script>

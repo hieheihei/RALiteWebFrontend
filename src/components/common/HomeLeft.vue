@@ -1,15 +1,18 @@
 <template>
-    <div>
-        RALite HomeLeft
-    </div>
+	<div>
+		RALite HomeLeft
+		<table-list></table-list>
+	</div>
 </template>
 
 
-
-
-
 <script>
-export default {
-    name:"HomeLeft"
-}
+	import TableList from '../TableList.vue'
+	
+	export default {
+		name:'HomeLeft',
+		components:{
+			TableList
+		}
+	}
 </script>
