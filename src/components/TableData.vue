@@ -24,8 +24,6 @@
 </template>
 
 <script>
-	import axios from 'axios'
-
 	export default {
 		name: 'TableData',
 		props:{
@@ -66,7 +64,7 @@
 		},
 		methods: {
 			getTableData(query){
-				axios.put('http://localhost:1316/raQuery', {
+				this.axiosInstance.put('raQuery', {
 						query: query
 					})
 					.then((response) => {

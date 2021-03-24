@@ -15,7 +15,6 @@
 
 
 <script>
-	import axios from 'axios'
 	import TableData from './TableData.vue'
 
 	export default {
@@ -31,7 +30,7 @@
 		},
 		methods: {
 			getTableNames(){
-				axios.get('http://localhost:1316/dataService/tables')
+				this.axiosInstance.get('dataService/tables')
 					.then((response) => {
 						this.tableNames = response.data.model;
 						this.tableShowFlags = new Array(this.tableNames.length).fill(false);

@@ -14,6 +14,15 @@ import VueFroala from 'vue-froala-wysiwyg'
 
 Vue.use(VueFroala)
 
+
+const axios = require('axios');
+const axiosInstance = axios.create({
+  // baseURL: 'http://localhost:1316/'
+  baseURL: 'http://172.20.168.38:1316'
+});
+Vue.prototype.axiosInstance = axiosInstance;
+
+
 Vue.config.productionTip = false
 
 

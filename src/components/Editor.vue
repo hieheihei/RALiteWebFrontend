@@ -7,7 +7,6 @@
 
 <script>
 	import FroalaEditor from 'froala-editor'
-	import axios from 'axios'
 
 	FroalaEditor.DefineIcon('projection', {
 		NAME: 'π',
@@ -173,7 +172,7 @@
 		methods: {
 			executeStatment() {
 				console.log(this.userInput);
-				axios.put('http://localhost:1316/raQuery', {
+				this.axiosInstance.put('raQuery', {
 				  query:this.userInput
 				  })
 				  .then((response) => {
